@@ -2,6 +2,7 @@ package Game;
 
 import People.Person;
 import Rooms.Room;
+import Rooms.StarRoom;
 import Rooms.WinningRoom;
 
 import java.util.Scanner;
@@ -28,14 +29,22 @@ public class Runner {
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
-		 
+
+		int a = (int)(Math.random()*building.length);
+		int b = (int)(Math.random()*building.length);
+		building[a][b] = new StarRoom(a, b);
+
+		int c = (int)(Math.random()*building.length);
+		int d = (int)(Math.random()*building.length);
+		building[c][d] = new StarRoom(c, d);
+
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Person player1 = new Person("", 2, 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
-			System.out.println("Where would you like to move? (Choose N, S, E, W)");
+			System.out.println("Where would you like to move? (Choose W, S, A, D)");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
 			{
@@ -62,7 +71,7 @@ public class Runner {
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
-			case "n":
+			case "w":
 				if (p.getxLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -73,7 +82,7 @@ public class Runner {
 				{
 					return false;
 				}
-			case "e":
+			case "d":
 				if (p.getyLoc()< map[p.getyLoc()].length -1)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -97,7 +106,7 @@ public class Runner {
 					return false;
 				}
 
-			case "w":
+			case "a":
 				if (p.getyLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
