@@ -4,7 +4,6 @@ import People.Person;
 import Rooms.Room;
 import Rooms.SpaceStationRoom;
 import Rooms.StarRoom;
-import Rooms.WinningRoom;
 
 import java.util.Scanner;
 

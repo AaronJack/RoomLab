@@ -12,6 +12,7 @@ public class GaseousPlanetRoom extends Room
 	public void enterRoom(Person x) {
 		Scanner command = new Scanner(System.in);
 		System.out.println("Aliens from the Gas Giant attack!!!!");
+		String answer = command.next();
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
