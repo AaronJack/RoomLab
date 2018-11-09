@@ -1,5 +1,5 @@
 package People;
-
-public class MyShip {
-    public MyShip("Starduster", )
-}
+//
+//public class MyShip {
+//    public MyShip("Starduster", )
+//}

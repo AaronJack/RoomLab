@@ -2,6 +2,7 @@ package Game;
 
 import People.Person;
 import Rooms.Room;
+import Rooms.SpaceStationRoom;
 import Rooms.StarRoom;
 import Rooms.WinningRoom;
 
@@ -36,10 +37,10 @@ public class Runner {
 
 		int c = (int)(Math.random()*building.length);
 		int d = (int)(Math.random()*building.length);
-		building[c][d] = new StarRoom(c, d);
+		building[c][d] = new SpaceStationRoom(c, d);
 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("", 2, 0,0);
+		Person player1 = new Person("Starduster", 2, 0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
